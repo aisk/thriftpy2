@@ -5,6 +5,7 @@ UNRELEASED
 ~~~~~~~~~~
 
 - Fix an issue where loading a thrift file in a sub-thread will cause an error.
+- Fix an issue which will hang the event loop in asyncio client when connecting to a invalid host.
 
 0.5.0
 ~~~~~
