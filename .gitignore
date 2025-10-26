@@ -54,3 +54,6 @@ pyvenv.cfg
 share/*
 
 venv
+
+# rust
+target

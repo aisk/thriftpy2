@@ -28,6 +28,7 @@ except ImportError:
     pass
 
 ext_modules = []
+rust_extensions = []
 
 # pypy detection
 PYPY = "__pypy__" in sys.modules
@@ -37,6 +38,8 @@ WINDOWS = platform.system() == "Windows"
 # only build ext in CPython
 if not PYPY:
     from Cython.Build import cythonize
+    from setuptools_rust import Binding, RustExtension
+
     cythonize("thriftpy2/transport/cybase.pyx")
     cythonize("thriftpy2/transport/**/*.pyx")
     cythonize("thriftpy2/protocol/cybin/cybin.pyx")
@@ -60,6 +63,15 @@ if not PYPY:
                                  ["thriftpy2/protocol/cybin/cybin.c"],
                                  libraries=libraries))
 
+    rust_extensions.append(RustExtension(
+            "thriftpy2.protocol.rust_apache_json",
+            # ^-- The last part of the name (e.g. "_lib") has to match lib.name
+            #     in Cargo.toml and the function name in the `.rs` file,
+            #     but you can add a prefix to nest it inside of a Python package.
+            path="Cargo.toml",  # Default value, can be omitted
+            binding=Binding.PyO3,  # Default value, can be omitted
+    ))
+
 setup(
       packages=find_packages(exclude=['benchmark', 'docs', 'tests']),
       zip_safe=False,
@@ -70,5 +82,6 @@ setup(
           "tornado": tornado_requires
       },
       ext_modules=ext_modules,
+      rust_extensions=rust_extensions,
       include_package_data=True,
 )
