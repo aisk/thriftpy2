@@ -124,6 +124,14 @@ impl TApacheJSONProtocol {
         let empty_list = PyList::empty(py);
         Ok(empty_list.into())
     }
+
+    fn read_message_end(&self, _py: Python) -> PyResult<()> {
+        Ok(())
+    }
+
+    fn skip(&self, _py: Python, _ttype: i32) -> PyResult<()> {
+        Ok(())
+    }
 }
 
 #[pyclass]
