@@ -1,6 +1,23 @@
 use pyo3::prelude::*;
 use pyo3::types::PyList;
 use serde_json::{self, Value};
+use base64::prelude::*;
+use std::ffi::CString;
+
+// Thrift type constants matching Python implementation
+const T_TYPE_BOOL: i32 = 2;
+const T_TYPE_BYTE: i32 = 3;
+const T_TYPE_I8: i32 = 3; // Same as BYTE
+const T_TYPE_I16: i32 = 6;
+const T_TYPE_I32: i32 = 8;
+const T_TYPE_I64: i32 = 10;
+const T_TYPE_DOUBLE: i32 = 4;
+const T_TYPE_STRING: i32 = 11;
+const T_TYPE_BINARY: i32 = 11; // Same as string in Apache JSON
+const T_TYPE_STRUCT: i32 = 12;
+const T_TYPE_LIST: i32 = 15;
+const T_TYPE_SET: i32 = 14;
+const T_TYPE_MAP: i32 = 13;
 
 #[pyclass]
 pub struct TApacheJSONProtocol {
@@ -131,6 +148,31 @@ impl TApacheJSONProtocol {
 
     fn skip(&self, _py: Python, _ttype: i32) -> PyResult<()> {
         Ok(())
+    }
+
+    fn read_struct(&mut self, py: Python, obj: Py<PyAny>) -> PyResult<Py<PyAny>> {
+        if self.req.is_none() {
+            self.load_data(py)?;
+        }
+
+        if let Some(ref req) = self.req {
+            if let Some(array) = req.as_array() {
+                if array.len() >= 5 {
+                    let data = &array[4];
+                    return self.dict_to_thrift(py, data, obj);
+                }
+            }
+        }
+
+        Ok(obj)
+    }
+}
+
+impl TApacheJSONProtocol {
+    fn dict_to_thrift(&self, _py: Python, _data: &Value, base_obj: Py<PyAny>) -> PyResult<Py<PyAny>> {
+        // Simple implementation that returns the base object
+        // This is a placeholder that needs to be implemented properly
+        Ok(base_obj)
     }
 }
 
