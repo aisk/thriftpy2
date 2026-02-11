@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 """
 >>> pingpong = thriftpy2.load("pingpong.thrift")
@@ -15,7 +14,6 @@
 'pong'
 """
 
-from __future__ import absolute_import
 
 import logging
 import socket

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 """
 # Run server:
@@ -30,7 +29,6 @@
 >>> client.ping()
 """
 
-from __future__ import absolute_import
 
 import http.client as http_client
 import http.server as http_server

@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 
-from __future__ import absolute_import, annotations
+from __future__ import annotations
 
 import importlib.abc
 import importlib.util
