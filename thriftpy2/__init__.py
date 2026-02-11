@@ -1,4 +1,3 @@
-
 import sys
 
 from .hook import install_import_hook, remove_import_hook

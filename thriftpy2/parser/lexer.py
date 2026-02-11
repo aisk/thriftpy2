@@ -1,5 +1,4 @@
 
-
 from .exc import ThriftLexerError
 
 

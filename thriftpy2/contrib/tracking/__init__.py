@@ -1,4 +1,3 @@
-
 """
 Tracking support similar to twitter finagle-thrift.
 

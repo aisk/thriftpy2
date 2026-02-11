@@ -1,4 +1,3 @@
-
 import thriftpy2
 from thriftpy2.thrift import TProcessor
 

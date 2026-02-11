@@ -1,5 +1,4 @@
 
-
 from thriftpy2._compat import CYTHON
 
 from .base import TTransportBase, TTransportException

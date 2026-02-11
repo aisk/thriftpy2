@@ -1,4 +1,3 @@
-
 """
 This file shows what dynamically generated
 """

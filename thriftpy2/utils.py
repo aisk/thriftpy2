@@ -1,5 +1,4 @@
 
-
 import binascii
 
 from .transport import TMemoryBuffer

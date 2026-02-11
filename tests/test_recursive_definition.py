@@ -1,4 +1,3 @@
-
 from thriftpy2.parser import load
 
 

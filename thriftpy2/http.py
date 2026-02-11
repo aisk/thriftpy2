@@ -1,4 +1,3 @@
-
 """
 # Run server:
 >>> import thriftpy2

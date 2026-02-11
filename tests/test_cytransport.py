@@ -1,4 +1,3 @@
-
 import pytest
 
 from thriftpy2._compat import CYTHON

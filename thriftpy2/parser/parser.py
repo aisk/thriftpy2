@@ -1,4 +1,3 @@
-
 """
 IDL Ref:
     https://thrift.apache.org/docs/idl

@@ -1,5 +1,4 @@
 
-
 from thriftpy2 import load
 from thriftpy2.thrift import TPayload, TException, TType
 

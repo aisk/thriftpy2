@@ -1,5 +1,4 @@
 
-
 import struct
 
 from ..thrift import TType

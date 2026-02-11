@@ -1,4 +1,3 @@
-
 import thriftpy2
 from thriftpy2.protocol import TBinaryProtocolFactory
 from thriftpy2.server import TThreadedServer

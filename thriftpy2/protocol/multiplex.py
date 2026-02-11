@@ -1,4 +1,3 @@
-
 from thriftpy2.protocol.base import TProtocolFactory
 from thriftpy2.thrift import TMultiplexedProcessor, TMessageType
 

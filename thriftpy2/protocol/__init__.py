@@ -1,5 +1,4 @@
 
-
 from .base import TProtocolBase
 from .binary import TBinaryProtocol, TBinaryProtocolFactory
 from .json import TJSONProtocol, TJSONProtocolFactory

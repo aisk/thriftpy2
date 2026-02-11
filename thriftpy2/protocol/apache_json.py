@@ -1,4 +1,3 @@
-
 """
 Transport for json protocol that apache thrift files will understand
 unfortunately, thriftpy2's TJSONProtocol is not compatible with apache's

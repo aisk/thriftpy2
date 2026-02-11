@@ -1,4 +1,3 @@
-
 """
 >>> pingpong = thriftpy2.load("pingpong.thrift")
 >>>

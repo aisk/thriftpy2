@@ -1,5 +1,4 @@
 
-
 from struct import unpack
 
 from thriftpy2.protocol.exc import TProtocolException

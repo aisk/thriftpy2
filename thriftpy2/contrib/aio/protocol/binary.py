@@ -1,5 +1,4 @@
 
-
 from thriftpy2.thrift import TType
 
 from thriftpy2.protocol.exc import TProtocolException

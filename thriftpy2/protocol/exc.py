@@ -1,5 +1,4 @@
 
-
 from ..thrift import TException
 
 

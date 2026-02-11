@@ -1,5 +1,4 @@
 
-
 from thriftpy2.transport import TTransportBase, TTransportException
 
 

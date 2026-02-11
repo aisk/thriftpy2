@@ -1,5 +1,4 @@
 
-
 from io import BytesIO
 
 from thriftpy2._compat import CYTHON
